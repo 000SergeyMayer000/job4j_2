@@ -1,6 +1,7 @@
 package ru.job4j_2.condition;
 
 public class AlertDivByZero {
+
     public static void main(String[] args) {
         possibleDiv(4);
         possibleDiv(0);
