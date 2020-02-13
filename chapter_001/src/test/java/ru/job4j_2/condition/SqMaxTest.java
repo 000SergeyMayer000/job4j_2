@@ -12,11 +12,12 @@ public class SqMaxTest {
     }
 
     @Test
-    public void whenForthdMax() {
+    public void whenForthMax() {
         SqMax check = new SqMax();
         int result = check.max(1, 2, 3, 4);
         assertThat(result, is(4));
     }
+
     @Test
     public void whenFirstMax() {
         SqMax check = new SqMax();
@@ -24,4 +25,11 @@ public class SqMaxTest {
         assertThat(result, is(4));
     }
 
+
+    @Test
+    public void whenThirdMax() {
+        SqMax check = new SqMax();
+        int result = check.max(0, 0, 1, 0);
+        assertThat(result, is(1));
+    }
 }
