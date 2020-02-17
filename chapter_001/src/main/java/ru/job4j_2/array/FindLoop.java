@@ -3,18 +3,38 @@ package ru.job4j_2.array;
 /**
  * 6.1. Классический поиск перебором.[#235426]
  */
-
 public class FindLoop {
 
     /**
      * метод возвращает индех эллемента массива, если такой есть  и -1 если отсутствует
+     *
      * @param data - массива для поиска
-     * @param el - эллемент массива, который необходимао найти
-     * @return  - индекс нойденой ячейки
+     * @param el   - эллемент массива, который необходимао найти
+     * @return - индекс нойденой ячейки
      */
     public int indexOf(int[] data, int el) {
         int rst = -1;
-            for (int index = 0; index < data.length; index++) {
+        for (int index = 0; index < data.length; index++) {
+            if (data[index] == el) {
+                rst = index;
+                break;
+            }
+        }
+        return rst;
+    }
+
+    /**
+     * метод возвращает индех эллемента из заданного диапазона массива, если такой есть  и -1 если отсутствует
+     *
+     * @param data   - массива для поиска
+     * @param el     - эллемент массива, который необходимао найти
+     * @param start  - индекс ячейки начала диапазона
+     * @param finish - индекс ячейки конец диапазона
+     * @return -  индекс нойденой ячейки
+     **/
+    public static int indexOf(int[] data, int el, int start, int finish) {
+        int rst = -1;
+        for (int index = start; index <= finish; index++) {
             if (data[index] == el) {
                 rst = index;
                 break;
