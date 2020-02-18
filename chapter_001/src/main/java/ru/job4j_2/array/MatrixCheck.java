@@ -3,6 +3,7 @@ package ru.job4j_2.array;
 /**
  * 6.7.1. Моно строка в матрице.[#235437]
  * 6.7.2. Моно столбец в матрице.[#235438]
+ *  6.7.3. Массив из диагонали матрицы. [#235439]
  */
 public class MatrixCheck {
 
@@ -40,5 +41,18 @@ public class MatrixCheck {
             }
         }
         return result;
+    }
+
+    /**
+     * метод возвращает массив элементов, взятых по диагонали из исходного массива
+     * @param board - исходный массив
+     * @return - rsl
+     */
+    public static char[] extractDiagonal(char[][] board) {
+        char[] rsl = new char[board.length];
+        for (int i = 0; i < board.length; i++) {
+            rsl[i] = board[i][i];
+        }
+        return rsl;
     }
 }
