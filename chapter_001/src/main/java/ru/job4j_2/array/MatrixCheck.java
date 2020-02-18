@@ -3,7 +3,7 @@ package ru.job4j_2.array;
 /**
  * 6.7.1. Моно строка в матрице.[#235437]
  * 6.7.2. Моно столбец в матрице.[#235438]
- *  6.7.3. Массив из диагонали матрицы. [#235439]
+ * 6.7.3. Массив из диагонали матрицы. [#235439]
  */
 public class MatrixCheck {
 
@@ -45,6 +45,7 @@ public class MatrixCheck {
 
     /**
      * метод возвращает массив элементов, взятых по диагонали из исходного массива
+     *
      * @param board - исходный массив
      * @return - rsl
      */
@@ -54,5 +55,23 @@ public class MatrixCheck {
             rsl[i] = board[i][i];
         }
         return rsl;
+    }
+
+    /**
+     * метод проверяет есть ли выигрышная ситуация  в игре сокобан
+     *
+     * @param board - исходный массив
+     * @return - в случае наличия горизонтали (или вертикали) заполненой символами 'X' - возвращает true
+     */
+    public static boolean isWin(char[][] board) {
+        boolean result = false;
+        char[] diagonalArray = extractDiagonal(board);
+        for (int i = 0; i < diagonalArray.length; i++) {
+            if (diagonalArray[i] == 'X' || monoHorizontal(board, i) || monoVertical(board, i)) {
+                result = true;
+                break;
+            }
+        }
+        return result;
     }
 }
