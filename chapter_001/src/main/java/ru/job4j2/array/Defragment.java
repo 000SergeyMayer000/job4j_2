@@ -14,12 +14,14 @@ public class Defragment {
     public static String[] compress(String[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == null) {
-                for (int j = i; j < array.length; j++) {
-                    if (array[j] != null) {
-                        array[i] = array[j];
-                        array[j] = null;
+                int point = i;
+                while (point < array.length - 1) {
+                    if (array[point + 1] != null) {
+                        array[i] = array[point + 1];
+                        array[point + 1] = null;
                         break;
                     }
+                    point++;
                 }
             }
         }

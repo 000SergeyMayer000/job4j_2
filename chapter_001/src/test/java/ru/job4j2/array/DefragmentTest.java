@@ -23,7 +23,7 @@ public class DefragmentTest {
     }
 
     @Test
-    public void whqnAllNullExceptOne() {
+    public void whenAllNullExceptOne() {
         String[] input = {null, null, null, null, "One"};
         String[] compressed = Defragment.compress(input);
         String[] expected = {"One", null, null, null, null};
