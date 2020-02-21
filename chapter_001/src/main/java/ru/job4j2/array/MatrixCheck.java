@@ -67,7 +67,8 @@ public class MatrixCheck {
         boolean result = false;
         char[] diagonalArray = extractDiagonal(board);
         for (int i = 0; i < diagonalArray.length; i++) {
-            if (diagonalArray[i] == 'X' || monoHorizontal(board, i) || monoVertical(board, i)) {
+            //if (diagonalArray[i] == 'X' || monoHorizontal(board, i) || monoVertical(board, i)) {
+            if (diagonalArray[i] == 'X' && (monoHorizontal(board, i) || monoVertical(board, i))) {
                 result = true;
                 break;
             }
