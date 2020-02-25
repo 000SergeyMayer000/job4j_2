@@ -1,6 +1,15 @@
 package ru.job4j2.loop;
 
+/**
+ * 5.5. Простое число.[#235498]
+ */
 public class CheckPrimeNumber {
+
+    /**
+     * метод проверяет является ли число целым
+     * @param number - чосло
+     * @return - true(false)
+     */
     public static boolean check(int number) {
         boolean prime = true;
         if (number == 1) {

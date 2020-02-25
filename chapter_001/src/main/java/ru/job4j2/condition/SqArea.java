@@ -1,7 +1,16 @@
 package ru.job4j2.condition;
 
+/**
+ * 8. Стороны прямоугольника.[#235456]
+ */
 public class SqArea {
 
+    /**
+     * метод определяет площадь парямоугольника
+     * @param p - переиметр
+     * @param k - коэффициент отношения сторон
+     * @return - площадь
+     */
     public static double square(int p, int k) {
         int h = p / (2 * (k + 1));
         int l = h * k;

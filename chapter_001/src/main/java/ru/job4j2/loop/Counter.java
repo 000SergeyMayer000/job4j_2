@@ -1,6 +1,18 @@
 package ru.job4j2.loop;
 
+/**
+ * 5.0.1. Сумма чисел.[#235500]
+ * 5.1. Подсчет суммы чётных чисел в диапазоне[#235502]
+ */
 public class Counter {
+
+    /**
+     * метод складывает все числа в диапазоне
+     *
+     * @param start  - начало диапазона
+     * @param finish - конец диапазона
+     * @return - сумма
+     */
     public static int sum(int start, int finish) {
         int sum = 0;
         for (int i = start; i <= finish; i++) {
@@ -9,6 +21,13 @@ public class Counter {
         return sum;
     }
 
+    /**
+     * метод складывает все четные числа из диапазона
+     *
+     * @param start  - начало диапазона
+     * @param finish - конец диапазона
+     * @return - сумма
+     */
     public static int sumByEven(int start, int finish) {
         int sum = 0;
         for (int i = start; i <= finish; i++) {
@@ -19,6 +38,10 @@ public class Counter {
         return sum;
     }
 
+    /**
+     * Main
+     * @param args - args
+     */
     public static void main(String[] args) {
         System.out.println(sum(-2, 10));
         System.out.println(sum(3, 10));
