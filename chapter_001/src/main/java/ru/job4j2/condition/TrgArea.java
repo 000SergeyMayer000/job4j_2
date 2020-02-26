@@ -1,27 +1,69 @@
 package ru.job4j2.condition;
 
+import ru.job4j2.converter.Point;
+
 /**
  * 9. Площадь треугольника.[#235459]
  */
 public class TrgArea {
+    /**
+     * в поле прописаны объекты тпа Point представляющие вершины труегольника
+     */
+    private Point first;
+    private Point second;
+    private Point third;
 
     /**
-     * метод определяет площадь треугольника по формуле Герона
-     * @param a
-     * @param b
-     * @param c
-     * @return
+     * конструктор приниящий объекты типа Point
+     *
+     * @param ap  - вершина треугольника Point
+     * @param bp- вершина треугольника Point
+     * @param cp  - вершина треугольника Point
      */
-    public static double area(double a, double b, double c) {
-        double p = (a + b + c) / 2;
-        double rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+    public TrgArea(Point ap, Point bp, Point cp) {
+        this.first = ap;
+        this.second = bp;
+        this.third = cp;
+    }
+
+    /**
+     * Метод вычисления полупериметра по длинам сторон.
+     *
+     * @param a расстояние между точками a b
+     * @param b расстояние между точками a c
+     * @param c расстояние между точками b c
+     * @return полупериметр.
+     */
+    public double halfPer(double a, double b, double c) {
+        return (a + b + c) / 2;
+    }
+
+    /**
+     * метод вычисляет площадь треугольника
+     *
+     * @return - знчение площади, а если труегольник не сцществует - -1
+     */
+    public double area() {
+        double rsl = -1;
+        double a = first.distance(second);
+        double b = first.distance(third);
+        double c = second.distance(third);
+        double p = halfPer(a, b, c);
+        if (this.exist(a, b, c)) {
+            rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        }
         return rsl;
     }
 
-    public static void main(String[] args) {
-        double rsl = TrgArea.area(2, 2, 2);
-        System.out.println("area (2, 2, 2) = " + rsl);
-        double rsl2 = TrgArea.area(3, 4, 5);
-        System.out.println("area (3, 4, 5) = " + rsl2);
+    /**
+     * Метод проверяет можно ли построить треугольник с такими длинами сторон.
+     *
+     * @param a Длина от точки a b.
+     * @param b Длина от точки a c.
+     * @param c Длина от точки b c.
+     * @return - true(false)
+     */
+    private boolean exist(double a, double c, double b) {
+        return (a + b) > c && (b + c) > a && (c + a) > b;
     }
 }
