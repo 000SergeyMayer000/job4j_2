@@ -18,4 +18,15 @@ public class MaxTest {
         assertThat(result, is(1));
     }
 
+    @Test
+    public void whenCompare3Numbers() {
+        int result = Max.max(1, 2, 5);
+        assertThat(result, is(5));
+    }
+
+    @Test
+    public void whenCompare4Numbers() {
+        int result = Max.max(1, -2, 5, -10);
+        assertThat(result, is(5));
+    }
 }

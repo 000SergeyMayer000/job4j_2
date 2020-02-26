@@ -7,12 +7,37 @@ public class Max {
 
     /**
      * метод возвращает максимум из двух чисел
-     * @param left - первое значение
-     * @param right - второе значение
+     *
+     * @param first  - первое значение
+     * @param second - второе значение
      * @return - большее
      */
-    public static int max(int left, int right) {
-      //  return Math.max(left, right);
-        return left > right ? left : right;
+    public static int max(int first, int second) {
+        return Math.max(first, second);
+    }
+
+    /**
+     * метод возвращает максимум из ТРЁХ чисел(перегруженный метод)
+     *
+     * @param first  - первое значение
+     * @param second - второе значение
+     * @param third  -  третье значение
+     * @return - большее
+     */
+    public static int max(int first, int second, int third) {
+        return Math.max(third, max(first, second));
+    }
+
+    /**
+     * метод возвращает максимум из ЧЕТЫРЕХ чисел(перегруженный метод)
+     *
+     * @param first  - первое значение
+     * @param second - второе значение
+     * @param third  -  третье значение
+     * @param fourth -  третье значение
+     * @return - большее
+     */
+    public static int max(int first, int second, int third, int fourth) {
+        return Math.max(fourth, max(first, second, third));
     }
 }
