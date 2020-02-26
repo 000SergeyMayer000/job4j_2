@@ -28,4 +28,12 @@ public class PointTest {
         double out = point1.distance(new Point(0, 0));
         Assert.assertEquals(expected, out, 0.01);
     }
+
+    @Test
+    public void when3D000000() {
+        Point point1 = new Point(0, 0, 0);
+        double expected = 0;
+        double out = point1.distance3D(new Point(0, 0, 0));
+        Assert.assertEquals(expected, out, 0.01);
+    }
 }
