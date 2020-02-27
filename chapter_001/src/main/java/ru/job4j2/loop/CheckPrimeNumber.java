@@ -7,21 +7,20 @@ public class CheckPrimeNumber {
 
     /**
      * метод проверяет является ли число целым
+     *
      * @param number - чосло
      * @return - true(false)
      */
     public static boolean check(int number) {
-        boolean prime = true;
-        if (number == 1) {
-            prime = false;
-        } else {
+        boolean rsl = number > 1;
+        if (rsl) {
             for (int i = 2; i < number; i++) {
                 if (number % i == 0) {
-                    prime = false;
+                    rsl = false;
                     break;
                 }
             }
         }
-        return prime;
+        return rsl;
     }
 }
