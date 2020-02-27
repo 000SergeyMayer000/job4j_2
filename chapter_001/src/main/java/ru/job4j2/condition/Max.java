@@ -13,7 +13,7 @@ public class Max {
      * @return - большее
      */
     public static int max(int first, int second) {
-        return Math.max(first, second);
+        return first > second ? first : second;
     }
 
     /**
@@ -25,7 +25,7 @@ public class Max {
      * @return - большее
      */
     public static int max(int first, int second, int third) {
-        return Math.max(third, max(first, second));
+        return max(third, max(first, second));
     }
 
     /**
@@ -38,6 +38,6 @@ public class Max {
      * @return - большее
      */
     public static int max(int first, int second, int third, int fourth) {
-        return Math.max(fourth, max(first, second, third));
+        return max(fourth, max(first, second, third));
     }
 }
