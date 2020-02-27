@@ -13,6 +13,7 @@ public class MultiMax {
      * @return  - максимум
      */
     public int max(int first, int second, int third) {
-        return (first > second ? first : second) > third ? (first > second ? first : second) : third;
+        int rsl = first > second ? first : second;
+        return rsl > third ? rsl : third;
     }
 }
