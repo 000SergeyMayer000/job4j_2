@@ -6,10 +6,10 @@ package ru.job4j2.array;
 public class Matrix {
 
     /**
-     * метод реализует таблицку умнажения
+     * метод реализует таблицку умножения
      *
      * @param size - размер таблицы
-     * @return - таблица умнажения заданного размера
+     * @return - таблица умножения заданного размера
      */
     int[][] multiple(int size) {
         int[][] array = new int[size][size];

@@ -19,4 +19,11 @@ public class MultiMaxTest {
         int result = check.max(1, -3, -10);
         assertThat(result, is(1));
     }
-}
+
+    @Test
+    public void whenEqual() {
+        MultiMax check = new MultiMax();
+        int result = check.max(5, 5, 5);
+        assertThat(result, is(5));
+    }
+   }
