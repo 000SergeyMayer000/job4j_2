@@ -58,7 +58,12 @@ public class Tracker {
      * @return - возвращает массив найденых заявок
      */
     public Item findById(String id) {
-        return items[indexOf(id)];
+        int index = indexOf(id);
+        Item rsl = null;
+        if (index != -1) {
+            rsl = items[indexOf(id)];
+        }
+        return rsl;
     }
 
     /**
@@ -90,6 +95,24 @@ public class Tracker {
         item.setId(items[index].getId());
         items[index] = item;
         return item;
+    }
+
+    /**
+     * метод удаляетт заявку из трекера
+     *
+     * @param id - ID заявки , которую необходимо удалить
+     */
+    public boolean delete(String id) {
+        boolean rsl = false;
+        int indexDelete = indexOf(id);
+        if (indexDelete != -1) {
+            Item delete = items[indexDelete];
+            System.arraycopy(items, indexDelete + 1, items, indexDelete, (position - indexDelete - 1));
+            items[position - 1] = null;
+            position--;
+            rsl = true;
+        }
+        return rsl;
     }
 
     /**
