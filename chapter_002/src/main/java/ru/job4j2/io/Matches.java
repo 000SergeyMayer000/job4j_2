@@ -2,7 +2,12 @@ package ru.job4j2.io;
 
 import java.util.Scanner;
 
-
+/**
+ * 2. Scanner и чтение числа из консоли.[#235563]
+ * в этом классе реализована игра "11 спичек". Смысл игры в следующем: На столе
+ * лежат 11 спичек. Два игрока по очереди берут от 1 до 3 спичек.
+ * Выигрывает тот, кто забрал последние спички.
+ */
 public class Matches {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -50,7 +55,7 @@ public class Matches {
         }
     }
 }
-//public class Matches {
+//метод без валидации колличества спичек
 //    public static void main(String[] args) {
 //        Scanner input = new Scanner(System.in);
 //        int matches = 11;
