@@ -7,6 +7,13 @@ import static org.junit.Assert.assertThat;
 
 public class CheckTest {
     @Test
+    public void whenDataMonoByFalseThenFalse() {
+        boolean[] input = new boolean[]{false, false, false};
+        boolean result = Check.mono(input);
+        assertThat(result, is(true));
+    }
+
+    @Test
     public void whenDataMonoByTrueThenTrue() {
         boolean[] input = new boolean[]{true, true, true};
         boolean result = Check.mono(input);

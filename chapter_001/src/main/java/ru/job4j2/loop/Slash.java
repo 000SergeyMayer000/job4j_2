@@ -15,11 +15,15 @@ public class Slash {
             for (int cell = 0; cell < size; cell++) {
                 boolean left = (cell == row);
                 boolean right = (((cell + row) + 1) == size);
-                if (left) {
-                    System.out.print("0");
-                } else if (right) {
-                    System.out.print("0");
-                } else {
+                if (left || right) {
+                                    System.out.print("0");
+                                }  else {
+
+//                if (left) {
+//                    System.out.print("0");
+//                } else if (right) {
+//                    System.out.print("0");
+//                } else {
                     System.out.print(" ");
                 }
             }
