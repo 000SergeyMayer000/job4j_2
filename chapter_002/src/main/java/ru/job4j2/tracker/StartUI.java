@@ -1,10 +1,21 @@
 package ru.job4j2.tracker;
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
+/**
+ * 2.1. Реализация класса StartUI[#235573]
+ */
 public class StartUI {
 
+    /**
+     *метод обеспечивает работу всего приложения, в зависимости от выбранного
+     * значения  меню, метод произведет основные операции с заявуками:
+     * добавить, удалить, редактировать, показать все, произведет поиск по имени и ID
+     *
+     * @param scanner - принимает параметры введенные с консоли
+     * @param tracker - класс-хранилище заявок,
+     */
     public void init(Scanner scanner, Tracker tracker) {
         boolean run = true;
         while (run) {
@@ -53,7 +64,6 @@ public class StartUI {
                 System.out.println("=== Find Item by Name ====");
                 System.out.print("Enter Name: ");
                 String name = scanner.nextLine();
-               // System.out.println(Arrays.toString(tracker.findByName(name)));
                 Item[] findItems = tracker.findByName(name);
                 for (Item item1 : findItems) {
                     System.out.println(item1);
@@ -64,6 +74,9 @@ public class StartUI {
         }
     }
 
+    /**
+     * метод выводит на экран все элементы меню
+     */
     private void showMenu() {
         System.out.println("     Menu.");
         System.out.println("     0. Add new Item");
@@ -75,7 +88,10 @@ public class StartUI {
         System.out.println("     6. Exit program");
     }
 
-
+    /**
+     * Main
+     * @param args - args
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Tracker tracker = new Tracker();

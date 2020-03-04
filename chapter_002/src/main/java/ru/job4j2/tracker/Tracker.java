@@ -41,7 +41,7 @@ public class Tracker {
     public Item[] findByName(String key) {
         Item[] result = new Item[position];
         int sizeCopyArray = 0;
-        for (int i = 0; i <position; i++) {
+        for (int i = 0; i < position; i++) {
             Item item = items[i];
             if (item.getName().equals(key)) {
                 result[sizeCopyArray] = item;
