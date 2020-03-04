@@ -41,10 +41,10 @@ public class Tracker {
     public Item[] findByName(String key) {
         Item[] result = new Item[position];
         int sizeCopyArray = 0;
-        for (int i = 0; i < items.length; i++) {
+        for (int i = 0; i <position; i++) {
             Item item = items[i];
             if (item.getName().equals(key)) {
-                result[i] = item;
+                result[sizeCopyArray] = item;
                 sizeCopyArray++;
             }
         }
@@ -88,13 +88,17 @@ public class Tracker {
      *
      * @param id   - ID заявки , которую необходимо заменить
      * @param item - новая заявка для замены
-     * @return - замененная заявка
+     * @return - true - в случае удачной замены заявки
      */
-    public Item replace(String id, Item item) {
-        int index = indexOf(id);
-        item.setId(items[index].getId());
-        items[index] = item;
-        return item;
+    public boolean replace(String id, Item item) {
+        boolean rsl = false;
+        int indexReplace = indexOf(id);
+        if (indexReplace != -1) {
+            item.setId(items[indexReplace].getId());
+            items[indexReplace] = item;
+            rsl = true;
+        }
+        return rsl;
     }
 
     /**
