@@ -1,6 +1,8 @@
 package ru.job4j2.tracker;
 
-
+/**
+ * 9. Написать тесты на StartUI.[#235574]
+ */
 public class StubAction implements UserAction {
     private boolean call = false;
 
