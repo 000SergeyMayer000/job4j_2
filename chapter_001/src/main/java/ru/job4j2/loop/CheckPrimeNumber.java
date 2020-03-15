@@ -11,16 +11,32 @@ public class CheckPrimeNumber {
      * @param number - чосло
      * @return - true(false)
      */
+
     public static boolean check(int number) {
-        boolean rsl = number > 1;
-        if (rsl) {
+        boolean prime = true;
+
+        if (number > 1) {
             for (int i = 2; i < number; i++) {
                 if (number % i == 0) {
-                    rsl = false;
+                    prime = false;
                     break;
                 }
             }
+        } else {
+            prime = false;
         }
-        return rsl;
+        return prime;
     }
+//    public static boolean check(int number) {
+//        boolean rsl = number > 1;
+//        if (rsl) {
+//            for (int i = 2; i < number; i++) {
+//                if (number % i == 0) {
+//                    rsl = false;
+//                    break;
+//                }
+//            }
+//        }
+//        return rsl;
+//    }
 }
