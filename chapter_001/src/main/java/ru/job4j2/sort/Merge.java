@@ -2,47 +2,46 @@ package ru.job4j2.sort;
 
 import java.util.Arrays;
 
+/**
+ * Объединить два массива [#124482]
+ */
 public class Merge {
-
-    @SuppressWarnings("checkstyle:EmptyBlock")
+    /**
+     * метод объединяет два отсортированных массива в третий
+     * @param left - первый массив
+     * @param right - второй массив
+     * @return - объединенны массив
+     */
     public int[] merge(int[] left, int[] right) {
-        int[] rsl = new int[left.length + right.length];
-        int i = 0; //индекс левого имассива
-        int j = 0; // индекс правого массива
-
-        while (i + j != rsl.length) {
-            if (i < left.length && j == right.length) {
-                rsl[i + j] = left[i];
-                i++;
-            } else if (j < right.length && i == left.length) {
-                rsl[i + j] = right[j];
-                j++;
+        int indexLeft = 0;
+        int indexRight = 0;
+        int indexArr = 0;
+        int[] arr = new int[left.length + right.length];
+        while (indexArr < arr.length) {
+            if (indexLeft == left.length) {
+                arr[indexArr++] = right[indexRight++];
+            } else if (indexRight == right.length) {
+                arr[indexArr++] = left[indexLeft++];
+            } else if (right[indexRight] > left[indexLeft]) {
+                arr[indexArr++] = left[indexLeft++];
             } else {
-                if (left[i] < right[j]) {
-                    rsl[i + j] = left[i];
-                    i++;
-                } else {
-                    rsl[i + j] = right[j];
-                    j++;
-                }
+                arr[indexArr++] = right[indexRight++];
             }
-            }
-        return rsl;
+
+        }
+        return arr;
     }
 
+    /**
+     * Main
+     * @param args - args
+     */
     public static void main(String[] args) {
-        int i = 0;
-     while (i < 5) {
-            System.out.println(i + " < 5");
-            i++;
-        }
-        System.out.println(i);
-//        Merge process = new Merge();
-//        int[] rsl = process.merge(
-//                new int[]{1, 3, 5},
-//                new int[]{2, 4}
-//        );
-//        System.out.println(Arrays.toString(rsl));
+        Merge mergingArrays = new Merge();
+        int[] a = {1, 3, 5};
+        int[] b = {2, 4};
+        System.out.println(Arrays.toString(mergingArrays.merge(a, b)));
     }
 }
+
 
