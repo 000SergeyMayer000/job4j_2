@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * 1. Телефонный справочник на базе ArrayList[#235528]
  */
 public class PhoneDictionary {
-    private ArrayList<Person> persons = new ArrayList<Person>();
+    private ArrayList<Person> persons = new ArrayList<>();
 
     public void add(Person person) {
         this.persons.add(person);
@@ -23,8 +23,6 @@ public class PhoneDictionary {
         for (Person person : persons) {
             if (person.getAddress().contains(key) || person.getName().contains(key) || person.getPhone().contains(key) || person.getSurname().contains(key)) {
                 result.add(person);
-            } else{
-                result.add(null);
             }
         }
         return result;
