@@ -1,11 +1,8 @@
 ﻿# job4j2
+[![Build Status](https://travis-ci.org/000SergeyMayer000/job4j_2.svg?branch=master)](https://travis-ci.org/000SergeyMayer000/job4j_2)
+[![codecov](https://codecov.io/gh/000SergeyMayer000/job4j_2/branch/master/graph/badge.svg)](https://codecov.io/gh/000SergeyMayer000/job4j_2)
 
-Я продолжаю учиться
+Я продолжаю учиться на курсе Петра Арсентьева JOB4J
 
-I'm on work
-Создание ветки из IDEA
+https://job4j.ru/ 
 
-Создана дополнительная ветка task_235553
-В курсе производилась работа с ветками Git
-Объдинение фиксированных изменений
- еще одно изменение
